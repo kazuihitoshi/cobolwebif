@@ -1,0 +1,109 @@
+{\gt html} cookie.html
+
+{\footnotesize 
+\begin{tabular}{|l|}
+\hline
+\vspace{-0.4em}\verb!<html lang="ja" dir="ltr">!\\
+\vspace{-0.4em}\verb!<meta http-equiv="content-type" content="text/html"; charset=X-EUC-JP">!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!クッキーサンプル あっほー!\\
+\vspace{-0.4em}\verb!<FORM action="cookie.cgi" METHOD="POST">!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!<input type="text" name="data1" maxlength="12" size="15" value="@DATA1">!\\
+\vspace{-0.4em}\verb!<input type="submit" value="実行">!\\
+\vspace{-0.4em}\verb!<input type="reset" value="取消">!\\
+\vspace{-0.4em}\verb!</form>!\\
+\vspace{-0.4em}\verb!</html>!\\
+\\
+\hline
+\end{tabular}
+}
+
+\vspace{1em}
+{\gt cobol source} cookie.cob
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+\vspace{-0.4em}\verb!       IDENTIFICATION        DIVISION.!\\
+\vspace{-0.4em}\verb!       PROGRAM-ID.           cookie.!\\
+\vspace{-0.4em}\verb!       AUTHOR.               kazui.!\\
+\vspace{-0.4em}\verb!       ENVIRONMENT           DIVISION.!\\
+\vspace{-0.4em}\verb!       CONFIGURATION         SECTION.!\\
+\vspace{-0.4em}\verb!       INPUT-OUTPUT          SECTION.!\\
+\vspace{-0.4em}\verb!       DATA                  DIVISION.!\\
+\vspace{-0.4em}\verb!       FILE                  SECTION.!\\
+\vspace{-0.4em}\verb!      *!\\
+\vspace{-0.4em}\verb!       WORKING-STORAGE SECTION.!\\
+\vspace{-0.4em}\verb!       01 http-cookie-rec.!\\
+\vspace{-0.4em}\verb!        02 filler  pic x(10) value 'DATA1'.!\\
+\vspace{-0.4em}\verb!        02 filler  pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 data1  pic x(16) value space.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!       01 web-if-rec.!\\
+\vspace{-0.4em}\verb!        02 filler pic x(15) value 'SCREENNAME'.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 wscreenname pic x(80) value 'cookie.html'.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x(10) value 'DATA1'.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 data1  pic x(16) value space.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!        02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!       COPY web-cookie.!\\
+\vspace{-0.4em}\verb!       01 web-rc   pic 9(10) binary.!\\
+\vspace{-0.4em}\verb!      *------------------------------------------------!\\
+\vspace{-0.4em}\verb!       PROCEDURE             DIVISION.!\\
+\vspace{-0.4em}\verb!       MAIN-PROC             SECTION.!\\
+\vspace{-0.4em}\verb!       MAIN-PROC-1.!\\
+\vspace{-0.4em}\verb!      *!\\
+\vspace{-0.4em}\verb!          call 'WEB_GET_QUERY_STRING'.!\\
+\vspace{-0.4em}\verb!          call 'WEB_POP'        using web-if-rec.!\\
+\vspace{-0.4em}\verb!          move 'cookie.html' to wscreenname of web-if-rec.!\\
+\vspace{-0.4em}\verb!          if data1 of web-if-rec  = SPACE then!\\
+\vspace{-0.4em}\verb!           call 'WEB_POP_COOKIE' using http-cookie-rec!\\
+\vspace{-0.4em}\verb!           move data1 of http-cookie-rec to data1 of web-if-rec!\\
+\vspace{-0.4em}\verb!          else!\\
+\vspace{-0.4em}\verb!           initialize WEB-COOKIE!\\
+\vspace{-0.4em}\verb!           move 'DATA1'   to WEB-NAME!\\
+\vspace{-0.4em}\verb!           move  data1 of web-if-rec to WEB-VALUE!\\
+\vspace{-0.4em}\verb!           call  'WEB_SET_COOKIE' using WEB-COOKIE WEB-RC!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!           initialize WEB-COOKIE!\\
+\vspace{-0.4em}\verb!           move 'DATA2'   to WEB-NAME!\\
+\vspace{-0.4em}\verb!           move  'test save' to WEB-VALUE!\\
+\vspace{-0.4em}\verb!           call  'WEB_SET_COOKIE' using WEB-COOKIE WEB-RC!\\
+\vspace{-0.4em}\verb!          end-if.!\\
+\vspace{-0.4em}\verb!          call 'WEB_PUSH' using web-if-rec.!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!          call 'WEB_SHOW'!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!      *!\\
+\vspace{-0.4em}\verb!          STOP RUN.!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\\
+\hline
+\end{tabular}
+}
+
+{\gt メニューHTML(起動用のHTML定義)}
+
+\begin{tabular}{|l|}
+\hline
+\verb+<html lang="ja" dir="ltr">+\\
+\verb+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">+\\
+\verb+<a href="/cgi-bin/cookie.cgi">クッキーサンプル</a>+\\
+\verb+</html>+\\
+\hline
+\end{tabular}

@@ -1,0 +1,81 @@
+
+\begin{itemize}
+\item{書式}
+
+{\gt ロック機能コピー句の読込}
+
+\begin{tabular}{|l|}
+\hline
+WORKING-STORAGE SECTION.\\
+COPY web-lock.\\
+77  rc  pic s9(10).\\
+\hline
+\end{tabular}
+
+{\gt 排他ロック}
+
+\begin{tabular}{|l|}
+\hline
+MOVE 'ロックID' TO LC-LOCK-FILE.\\
+SET LC-LOCK-EXCLUSIVE   TO TRUE.\\
+CALL 'WEB\_LOCK' using LC-WEB-LOCK rc.\\
+\multicolumn{1}{|c|}{: :}\\
+CALL 'WEB\_UNLOCK' using LC-WEB-LOCK rc.\\
+\hline
+\end{tabular}
+
+{\gt 共有ロック}
+
+\begin{tabular}{|l|}
+\hline
+MOVE 'ロックID' TO LC-LOCK-FILE.\\
+SET LC-LOCK-SHARE       TO TRUE.\\
+CALL 'WEB\_LOCK' using LC-WEB-LOCK rc.\\
+\multicolumn{1}{|c|}{: :}\\
+CALL 'WEB\_UNLOCK' using LC-WEB-LOCK rc.\\
+\hline
+\end{tabular}
+
+\item{機能}
+
+ロック機能を実現する。ファイル更新の同期にはロック機能は不可欠です。
+
+当機能により、複数プロセスによる同時ファイル更新によるファイルクラッシュを防ぐ事が出来ます。
+
+通常ロックというとファイルなどの個別リソースのロックを想像しがちですが、
+CGIプログラム自体をトランザクションと考え、トランザクション単位のロックの考え方をします。
+
+同期の必要なCGIプログラムは基本的に同一のディレクトリで動作する事を想定しており、
+上記関数のロックＩＤはロック制御用ファイルのファイル名として取り扱います。
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+MOVE 'TR' TO LC-LOCK-FILE.      \\
+SET LC-LOCK-EXCLUSIVE TO TRUE.  \\
+CALL 'WEB\_LOCK' using LC-WEB-LOCK rc.\\
+\hline
+\end{tabular}
+}
+
+とのコードを実行すると。CGIプログラムのカレントディレクトリに''TR''というファイルを作成し、
+flockにて排他ロックがかかります。
+
+これで、''TR''というロックＩＤで排他ロックをかけるCGIプログラムはアンロックされるまで実行を待たされます。
+
+（尚、ロックしたプログラムがアンロック前にクラッシュしてもロックリソースが解放されるので、自動的にアンロック状態となり、プログラムのバグなどによるシステムデッドロックは発生しません。）
+
+排他ロックとは書き込み禁止の時に使用するロックであり、共有ロックとは読込中に書き込みを禁止するロックです。
+
+トランザクションによってロックＩＤをなににするか、ロックモードをどうするかは、プログラム設計者がきっちり決める必要があります。
+
+また、ロック制御用のファイルを作成することから、初回ロックにはファイルの作成権が必要(初回はロックファイルを生成し、アンロック後もロック制御ファイルは保持される)となります。
+(排他ロックは2回目のロック時も別にロック制御ファイルに対する書き込み権が必要です。)
+
+\vspace{1em}
+
+
+\end{itemize}
+
+
+

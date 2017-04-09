@@ -1,0 +1,17 @@
+<html lang="ja" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">
+<FORM action="calcsample.cgi" METHOD="POST">
+四則演算処理のサンプルです。<br><br>
+<input type="text" name="DATA1" maxlength="12" size="15" value="@DATA1">
+<select name="WMODE">
+ <option value="a" @WMODE:a:SELECTED:>+  ＋</option>
+ <option value="s" @WMODE:s:SELECTED:>-  −</option>
+ <option value="m" @WMODE:m:SELECTED:>*  ×</option>
+ <option value="d" @WMODE:d:SELECTED:>/  ÷</option>
+</select>
+<input type="text" name="DATA2" maxlength="12" size="15" value="@DATA2">＝@RESULT
+<input type="submit" value="実行">
+<input type="reset" value="取消">
+@あいうえお
+</FORM>
+</html>

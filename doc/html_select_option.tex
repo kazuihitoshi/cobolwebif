@@ -1,0 +1,66 @@
+\begin{itemize}
+
+\item{表記方法}
+
+\begin{tabular}{l}
+\verb+<select name="CGI変数名">+\\
+\verb+<option value="変数内容" @変数名称:変数内容:SELECTED:>表示コード 表示名称</option>+\\
+\verb+<option value="変数内容" @変数名称:変数内容:SELECTED:>表示コード 表示名称</option>+\\
+   : : \\
+\verb+</select>+\\
+\end{tabular}
+
+\item{説明}
+
+プルダウンメニューを定義します。
+
+\item{コーディング例}
+
+{\gt html}
+
+\begin{tabular}{|l|}
+\hline
+\verb+<HTML LANG="ja" DIR="LTR">+\\
+\verb+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=X-EUC-JP">+\\
+\verb+<FORM ACTION="test" METHOD="POST">+\\
+\verb+血液型<select name="BLOODTYPE">+\\
+\verb+<option value="o"  @BLOODTYPE:o:SELECTED:>o  O型 </option>+\\
+\verb+<option value="a"  @BLOODTYPE:a:SELECTED:>a  A型 </option>+\\
+\verb+<option value="b"  @BLOODTYPE:b:SELECTED:>b  B型 </option>+\\
+\verb+<option value="ab" @BLOODTYPE:ab:SELECTED:>ab AB型</option>+\\
+\verb+</select>+\\
+\verb+<input type="submit" value="実行">+\\
+\verb+</form>+\\
+\verb+</html>+\\
+\hline
+\end{tabular}
+
+{\gt cobol} source test.cob
+
+\begin{tabular}{|l|}
+\hline
+\verb+ working-storage section.+\\
+\verb+  01 web-if-rec.+\\
+\verb+   02 filler pic x(20) value 'BLOODTYPE'.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb+   02 filler pic x value space.+\\
+\verb+   02 filler pic x value low-value+\\.
+\verb+   02 BLOODTYPE pic x(2) value space.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb++\\
+\verb+ procedure division.+\\
+\verb+ main.+\\
+\verb+  call 'WEB_QUERY_STRING'.+\\
+\verb+  call 'WEB_POP' using web-if-rec.+\\
+\verb+* 処理+\\
+\verb+  call 'WEB_PUSH' using web-if-rec.+\\
+\verb+  call 'WEB_SHOW'.+\\
+\verb+  stop.+\\
+\hline
+\end{tabular}
+
+\end{itemize}
+
+
+

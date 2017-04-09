@@ -1,0 +1,54 @@
+\begin{itemize}
+
+\item{表記方法}
+
+\verb+<input type="text" name="CGI変数名" maxlength="データ長" size="表示サイズ" value="@変数名称">+
+
+\item{説明}
+
+入力フィールドの定義します。
+
+\item{コーディング例}
+
+
+{\gt html}
+
+\begin{tabular}{|l|}
+\hline
+\verb+<html lang="ja" dir="ltr">+\\
+\verb+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">+\\
+\verb+<form action="test">+\\
+\verb+<input type="text" name="testdata" maxlength="80" size="80" value="@testdata">+\\
+\verb+<input type="submit" value="実行">+\\
+\verb+</form>+\\
+\verb+</html>+\\
+\hline
+\end{tabular}
+
+{\gt cobol} source test.cob
+
+\begin{tabular}{|l|}
+\hline
+\verb+ working-storage section.+\\
+\verb+  01 web-if-rec.+\\
+\verb+   02 filler pic x(20) value 'testdata'.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb+   02 filler pic x value space.+\\
+\verb+   02 filler pic x value low-value+\\.
+\verb+   02 testdata pic x(80) value space.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb+   02 filler pic x value low-value.+\\
+\verb++\\
+\verb+ procedure division.+\\
+\verb+ main.+\\
+\verb+  call 'WEB_QUERY_STRING'.+\\
+\verb+  call 'WEB_POP' using web-if-rec.+\\
+\verb+* 処理+\\
+\verb+  call 'WEB_PUSH' using web-if-rec.+\\
+\verb+  call 'WEB_SHOW'.+\\
+\verb+  stop.+\\
+\hline
+\end{tabular}
+
+\end{itemize}
+

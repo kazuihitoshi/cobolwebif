@@ -1,0 +1,105 @@
+CGIにてWebブラウザから送信されるデータは以下の様な形式です。
+
+送信されたデータが
+
+\begin{tabular}{|l|l|}
+\hline
+変数名 & 内容\\
+\hline
+d1     &あいうえお \\
+d2     &かきくけこ\\
+\hline
+\end{tabular}
+
+の内容の場合、送信データは
+
+\begin{tabular}{|l|}
+\hline
+\verb+d1=%A4%A2%A4%A4%A4%A6%A4%A8%A4%AA&d2=%A4%AB%A4%AD%A4%AF%A4%B1%A4%B3+\\
+\hline
+\end{tabular}
+
+となります。(ページの日本語コードをeucコードと仮定しています)
+
+送信データをCOBOLプログラム的に上記を扱いやすい形式に編集するには「\&」で分割し、
+
+\begin{tabular}{|l|}
+\hline
+\verb+d1=%A4%A2%A4%A4%A4%A6%A4%A8%A4%AA+\\
+\hline
+\verb+d2=%A4%AB%A4%AD%A4%AF%A4%B1%A4%B3+\\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\hspace{-1em}\%付でデコードされた情報をエンコードする必要があります。
+
+\begin{tabular}{|l|}
+\hline
+\verb+d1=%A4%A2%A4%A4%A4%A6%A4%A8%A4%AA→a4a2a4a4a4a6a4a8a4aa(あいうえお)+\\
+\hline
+\verb+d2=%A4%AB%A4%AD%A4%AF%A4%B1%A4%B3→a4aba4ada4afa4b1a4b3(かきくけこ)+\\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+COBOLで試しにコーディングしてみると
+
+\begin{verbatim}
+   :       :
+ working-storage section.
+ 01 query-string-rec.
+   02 d1   pic x( .. ).
+   02 d2   pic x( .. ).
+ 01 query-string-data.　　　←このエリアに送信データが入ると仮定
+   02 filler pic x( .. ). 
+ procedure division.
+ main  section.
+ 00.
+   unstring query-string-data delimited by "&"
+    into d1 d2
+   end-unstring   
+   d1をエンコード
+   d2をエンコード
+   :       :
+   本来の処理を実行
+   :       :
+   display 'Content-Type:text/html'      ←結果をHTMLで表示
+   display ''
+   display '<html>'
+      :      :
+   display '</html>'
+ 99.
+   :       :
+\end{verbatim}
+
+かなり省略してしまいましたが（エンコードの所など）、だいたい上記の様になります。
+
+この方法は全部COBOLソースで記述出来てしまうので、COBOLさえ動けば何とかすることが出来るでしょう。
+
+ですが、ここでもうちょっとひねってみてください。上記だと入力項目毎にエンコード行を書いていかないといけません。
+１〜１０項目ぐらいであれば上記も良いでしょうが、入力項目が多くなると少々つらくなってきます。
+COBOLプログラムの中にHTMLが入り込んでいるのも（別言語が混ざっている感じがして）、少々きになります。
+
+筆者としては、COBOLは階層化されたデータ構造をまとめてえいやーーと処理出来てしまうあのダイナミック（がさつさ？）さを捨てたくありません。
+また、HTMLは表示様式であるためプログラムとは別にしておいた方がモジュールの独立性上、良いようにおもわれます。
+
+たとえば、処理をプログラマが作成してHTMLはWebデザイナー専門の人に作ってもらう等、それぞれが独立していれば分業が可能です。
+
+一人の作業時も処理実装時には簡易的なHTMLで実装し、後で見た目（HTML）だけを作成し直すことも可能なのです。
+（逆もまたしかりです）
+
+ということで筆者はCOBOLをWebで使用するためのAPIを作成しました。
+
+このAPIを使用すれば、
+
+\begin{itemize}
+\item{ エンコード,デコード }
+\item{HTMLファイルとCOBOL出力データの合成}
+\item{内部変数のページへの保存(hidden表示)}
+\end{itemize}
+
+等、実際の処理とは関係ない部分を代わりに処理してもらえます。
+

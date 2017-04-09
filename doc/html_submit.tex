@@ -1,0 +1,102 @@
+\begin{itemize}
+
+\item{表記方法}
+
+\begin{tabular}{l}
+\verb+<input type="submit" name="変数名称" value="CGI変数内容" $変数名称>+\\
+\end{tabular}
+
+\item{説明}
+
+実行ボタンを定義します。
+
+\item{コーディング例}
+
+ \begin{enumerate}
+ \item{ボタンが一つの場合}
+
+   {\gt html}
+
+   \begin{tabular}{|l|}
+   \hline
+   \verb+<html lang="ja" dir="ltr">+\\
+   \verb+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">+\\
+   \verb+<form action="test">+\\
+   \verb+<input type="submit" value="実行">+\\
+   \verb+</form>+\\
+   \verb+</html>+\\
+   \hline
+   \end{tabular}
+
+   {\gt cobol} source test.cob
+
+   \begin{tabular}{|l|}
+   \hline
+   \verb+ working-storage section.+\\
+   \verb+  01 web-if-rec.+\\
+   \verb+      : : +\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+ procedure division.+\\
+   \verb+ main.+\\
+   \verb+  call 'WEB_QUERY_STRING'.+\\
+   \verb+  call 'WEB_POP' using web-if-rec.+\\
+   \verb+* 処理+\\
+   \verb+  call 'WEB_PUSH' using web-if-rec.+\\
+   \verb+  call 'WEB_SHOW'.+\\
+   \verb+  stop.+\\
+   \hline
+   \end{tabular}
+
+ \item{ボタンが複数ある場合}
+
+   {\gt html}
+
+   \begin{tabular}{|l|}
+   \hline
+   \verb+<html lang="ja" dir="ltr">+\\
+   \verb+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">+\\
+   \verb+<form action="test">+\\
+   \verb+<input type="submit" name="SUBMITMODE" value="計算" $SUBMITMODE>+\\
+   \verb+<input type="submit" name="SUBMITMODE" value="検索" $SUBMITMODE>+\\
+   \verb+<input type="submit" name="SUBMITMODE" value="保存" $SUBMITMODE>+\\
+   \verb+</form>+\\
+   \verb+</html>+\\
+   \hline
+   \end{tabular}
+
+   {\gt cobol} source test.cob
+
+   \begin{tabular}{|l|}
+   \hline
+   \verb+ working-storage section.+\\
+   \verb+  01 web-if-rec.+\\
+   \verb+   02 filler pic x(20) value 'SUBMITMODE'. +\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+   02 filler pic x value space.+\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+   02 submitmode pic x (4) value space.+\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+   02 filler pic x value low-value.+\\
+   \verb+ procedure division.+\\
+   \verb+ main.+\\
+   \verb+  call 'WEB_QUERY_STRING'.+\\
+   \verb+  call 'WEB_POP' using web-if-rec.+\\
+   \verb+  evaluate submitmode of web-if-rec+\\
+   \verb+   when '計算'+\\
+   \verb+*       計算処理+\\
+   \verb+   when '検索'+\\
+   \verb+*       検索処理+\\
+   \verb+   when '保存'+\\
+   \verb+*       保存処理+\\
+   \verb+  end-evaluate+\\
+   \verb+* 処理+\\
+   \verb+  call 'WEB_PUSH' using web-if-rec.+\\
+   \verb+  call 'WEB_SHOW'.+\\
+   \verb+  stop.+\\
+   \hline
+   \end{tabular}
+
+ \end{enumerate}
+\end{itemize}
+

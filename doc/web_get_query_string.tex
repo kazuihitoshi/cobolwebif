@@ -1,0 +1,25 @@
+
+\begin{itemize}
+\item{書式}
+
+CALL 'WEB\_GET\_QUERY\_STRING'
+
+\item{機能}
+
+CGIで渡されるデータをWeb APIグローバル領域に読み込みます。
+
+CGIのデータ転送方法{\it GET,POST}の両方に対応しています。
+
+{\footnotesize
+\begin{tabular}{lcl}
+GET & ・・・ & 環境変数QUERY\_STRINGにより渡される方式 \\
+POST & ・・・ &標準入力で渡される方式\\
+\end{tabular}
+}
+
+\vspace{1em}
+
+Web APIグローバル領域の変数はWEB\_POP関数にてCOBOL変数領域へ取り出す事が出来ます。
+
+
+\end{itemize}

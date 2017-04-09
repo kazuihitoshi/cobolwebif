@@ -1,0 +1,20 @@
+<HTML LANG="ja" DIR="LTR">
+
+<FORM name="ff" ACTION="tocalc" METHOD="POST" onSubmit="submit_block()">
+<SCRIPT language="JavaScript">
+submit_block_flag = true;
+function submit_block(){
+   document.getElementById('mainform').style.display = 'none';
+   document.getElementById("message").style.visibility="visible";
+   window.defaultStatus = "要求を送信しています。" 
+   return true;
+}
+</SCRIPT>
+<span id=mainform>
+処理
+</span>
+<span id="message" style="visibility:hidden;">
+<h2>処理中です。</h2>
+</span>
+</form>
+</html>

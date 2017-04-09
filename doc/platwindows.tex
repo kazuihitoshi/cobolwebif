@@ -1,0 +1,83 @@
+\subsubsection{Webサーバ AN HTTPDのインストール}
+
+AN HTTPD\footnote{AN HTTPDは中田昭雄氏作成のWebサーバソフトです。}はWindowsで利用できるWebサーバの一つです。
+
+ダウンロードの方法
+
+http://www.st.rim.or.jp/~nakata/よりダウンロード出来ます。
+執筆時の最新バージョンはVersion1.42gで、ファイル名はhttpd142g.exeです。
+
+このファイルをダウンロードし、ダブルクリックにて起動してください。
+
+以上でインストールは完了です。
+
+\subsubsection{MinGW,OpenCOBOLのインストール}
+
+MinGWとはMinimalist GNU for Windowsの略であり、GCCによるネイティブな32bit Windowsプログラムを生成するための開発環境です。
+
+MinGWと似たものにCygwinという物がありますが、MinGWで生成したEXEはMinGW用のDLLは不要です。
+EXEのみで動作可能なネイティブコードを生成することが可能です。
+
+このあたりの詳細は ビットウォークさんのホームページ
+
+{\it http://members10.tsukaeru.net/bitwalk/index.html →MinGW→MinGWについて}
+
+に詳細の記述があります。
+
+詳細はこちらを参照してみてください。
+
+\vspace{1em}
+
+\begin{itemize}
+
+\item{MinGW,tools,open-cobolをダウンロードする}
+\footnote{MinGWはhttp://member10.tsukaeru.net/bitwalk/index.htmlよりCD-Rにて購入する事も可能です。}
+
+http://members10.tsukaeru.net/bitwalk/index.html → 「MinGw」をクリック → 「ダウンロード」をクリック
+→ 「mingw\_017.exe」「mingw\_tools\_004.exe」「open-cobol-0.10.1\_011.exe」をそれぞれダウロードします。
+
+\item{mingwのインストール}
+
+ダウンロードした{\it mingw\_017.exe}をダブルクリックします。
+後はメッセージに従ってインストールを行います。
+
+\item{mingw\_toolsのインストール}
+
+ダウンロードした{\it mingw\_tools\_004.exe}をダブルクリックします。
+後はメッセージに従ってインストールを行います。
+
+\item{open-cobolのインストール}
+
+ダウンロードした{\it open-cobol-0.10.1\_011.exe}をダブルクリックします。
+後はメッセージに従ってインストールを行います。
+
+\end{itemize}
+
+\subsubsection{COBOL Webインタフェースのインストール}
+
+当資料で紹介しているCOBOL Webインタフェースをインストールします。
+COBOL Webインタフェースはソースモジュールによる配布としております。
+
+{\it http://pulse.homeip.net/webif.html}より{\it web.0.2.tar.gz}を{\it c:¥temp}へダウンロードします。
+
+デスクトップにある{\it Msys}アイコンをクリックします。
+
+起動されたMsysウィンドウで、以下のコマンドを実行します。
+
+\$ mv /c/temp/web.0.2.tar.gz .
+
+\$ tar zxvf web.0.2.tar.gz
+
+\$ make libweb.a
+
+\$ cp -p libweb.a /usr/local/lib
+
+以上でインストールは終了です。
+
+/usr/local/lib/libweb.aは実際にはc:¥msys¥1.0¥local¥lib¥libweb.aにコピーされます。
+
+
+
+
+
+

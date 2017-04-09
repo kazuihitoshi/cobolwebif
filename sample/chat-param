@@ -1,0 +1,1533 @@
+       01 chat-param-if.
+      *
+          02 filler pic x(10) value "NAME".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "SENDDATA".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wsenddata pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "MESSAGE1".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wmessage1 pic x(80) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "MESSAGE2".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wmessage2 pic x(80) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "MESSAGE3".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wmessage3 pic x(80) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TARGET".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtarget pic x(80) value space.
+          02 filler pic x value low-value.
+      *   
+          02 filler pic x(10) value "COLOR".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR1".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor1 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME1".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname1 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA1".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata1 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME1".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime1 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR2".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor2 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME2".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname2 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA2".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata2 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME2".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime2 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR3".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor3 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME3".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname3 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA3".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata3 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME3".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime3 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR4".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor4 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME4".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname4 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA4".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata4 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME4".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime4 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR5".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor5 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME5".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname5 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA5".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata5 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME5".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime5 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR6".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor6 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME6".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname6 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA6".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata6 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME6".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime6 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR7".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor7 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME7".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname7 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA7".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata7 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME7".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime7 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR8".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor8 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME8".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname8 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA8".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata8 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME8".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime8 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR9".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor9 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME9".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname9 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA9".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata9 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME9".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime9 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR10".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor10 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME10".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname10 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA10".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata10 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME10".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime10 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR11".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor11 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME11".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname11 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA11".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata11 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME11".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime11 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR12".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor12 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME12".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname12 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA12".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata12 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME12".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime12 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR13".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor13 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME13".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname13 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA13".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata13 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME13".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime13 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR14".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor14 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME14".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname14 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA14".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata14 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME14".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime14 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR15".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor15 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME15".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname15 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA15".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata15 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME15".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime15 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR16".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor16 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME16".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname16 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA16".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata16 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME16".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime16 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR17".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor17 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME17".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname17 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA17".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata17 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME17".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime17 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR18".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor18 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME18".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname18 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA18".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata18 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME18".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime18 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR19".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor19 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME19".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname19 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA19".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata19 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME19".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime19 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR20".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor20 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME20".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname20 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA20".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata20 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME20".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime20 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR21".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor21 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME21".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname21 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA21".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata21 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME21".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime21 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR22".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor22 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME22".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname22 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA22".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata22 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME22".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime22 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR23".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor23 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME23".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname23 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA23".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata23 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME23".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime23 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR24".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor24 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME24".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname24 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA24".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata24 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME24".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime24 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR25".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor25 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME25".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname25 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA25".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata25 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME25".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime25 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR26".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor26 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME26".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname26 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA26".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata26 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME26".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime26 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR27".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor27 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME27".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname27 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA27".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata27 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME27".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime27 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR28".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor28 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME28".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname28 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA28".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata28 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME28".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime28 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR29".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor29 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME29".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname29 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA29".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata29 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME29".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime29 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR30".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor30 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME30".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname30 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA30".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata30 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME30".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime30 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR31".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor31 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME31".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname31 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA31".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata31 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME31".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime31 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR32".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor32 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME32".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname32 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA32".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata32 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME32".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime32 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR33".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor33 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME33".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname33 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA33".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata33 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME33".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime33 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR34".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor34 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME34".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname34 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA34".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata34 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME34".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime34 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR35".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor35 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME35".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname35 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA35".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata35 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME35".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime35 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR36".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor36 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME36".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname36 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA36".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata36 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME36".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime36 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR37".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor37 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME37".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname37 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA37".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata37 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME37".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime37 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR38".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor38 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME38".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname38 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA38".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata38 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME38".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime38 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR39".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor39 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME39".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname39 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA39".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata39 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME39".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime39 pic x(20) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "COLOR40".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wcolor40 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "NAME40".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wname40 pic x(30) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "DATA40".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wdata40 pic x(200) value space.
+          02 filler pic x value low-value.
+      *    
+          02 filler pic x(10) value "TIME40".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wtime40 pic x(20) value space.
+          02 filler pic x value low-value.
+      *
+          02 filler pic x(20) value 'SCREENNAME'.
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wscreenname pic x(200) value space.
+          02 filler pic x value low-value.
+      *
+          02 filler pic x(10) value "MODE".
+          02 filler pic x value low-value.
+          02 filler pic x value space.
+          02 filler pic x value low-value.
+          02 wmode pic x(10) value space.
+          02 filler pic x value low-value.
+      *
+          02 filler pic x value low-value.
+
+      01 chat-param-in.
+          02 wname pic x(30) value space.
+          02 wsenddata pic x(200) value space.
+          02 wcolor  pic x(30) value space.
+          02 wcolor1 pic x(30) value space.
+          02 wname1 pic x(30) value space.
+          02 wdata1 pic x(200) value space.
+          02 wtime1 pic x(20) value space.
+          02 wcolor2 pic x(30) value space.
+          02 wname2 pic x(30) value space.
+          02 wdata2 pic x(200) value space.
+          02 wtime2 pic x(20) value space.
+          02 wcolor3 pic x(30) value space.
+          02 wname3 pic x(30) value space.
+          02 wdata3 pic x(200) value space.
+          02 wtime3 pic x(20) value space.
+          02 wcolor4 pic x(30) value space.
+          02 wname4 pic x(30) value space.
+          02 wdata4 pic x(200) value space.
+          02 wtime4 pic x(20) value space.
+          02 wcolor5 pic x(30) value space.
+          02 wname5 pic x(30) value space.
+          02 wdata5 pic x(200) value space.
+          02 wtime5 pic x(20) value space.
+          02 wcolor6 pic x(30) value space.
+          02 wname6 pic x(30) value space.
+          02 wdata6 pic x(200) value space.
+          02 wtime6 pic x(20) value space.
+          02 wcolor7 pic x(30) value space.
+          02 wname7 pic x(30) value space.
+          02 wdata7 pic x(200) value space.
+          02 wtime7 pic x(20) value space.
+          02 wcolor8 pic x(30) value space.
+          02 wname8 pic x(30) value space.
+          02 wdata8 pic x(200) value space.
+          02 wtime8 pic x(20) value space.
+          02 wcolor9 pic x(30) value space.
+          02 wname9 pic x(30) value space.
+          02 wdata9 pic x(200) value space.
+          02 wtime9 pic x(20) value space.
+          02 wcolor10 pic x(30) value space.
+          02 wname10 pic x(30) value space.
+          02 wdata10 pic x(200) value space.
+          02 wtime10 pic x(20) value space.
+          02 wcolor11 pic x(30) value space.
+          02 wname11 pic x(30) value space.
+          02 wdata11 pic x(200) value space.
+          02 wtime11 pic x(20) value space.
+          02 wcolor12 pic x(30) value space.
+          02 wname12 pic x(30) value space.
+          02 wdata12 pic x(200) value space.
+          02 wtime12 pic x(20) value space.
+          02 wcolor13 pic x(30) value space.
+          02 wname13 pic x(30) value space.
+          02 wdata13 pic x(200) value space.
+          02 wtime13 pic x(20) value space.
+          02 wcolor14 pic x(30) value space.
+          02 wname14 pic x(30) value space.
+          02 wdata14 pic x(200) value space.
+          02 wtime14 pic x(20) value space.
+          02 wcolor15 pic x(30) value space.
+          02 wname15 pic x(30) value space.
+          02 wdata15 pic x(200) value space.
+          02 wtime15 pic x(20) value space.
+          02 wcolor16 pic x(30) value space.
+          02 wname16 pic x(30) value space.
+          02 wdata16 pic x(200) value space.
+          02 wtime16 pic x(20) value space.
+          02 wcolor17 pic x(30) value space.
+          02 wname17 pic x(30) value space.
+          02 wdata17 pic x(200) value space.
+          02 wtime17 pic x(20) value space.
+          02 wcolor18 pic x(30) value space.
+          02 wname18 pic x(30) value space.
+          02 wdata18 pic x(200) value space.
+          02 wtime18 pic x(20) value space.
+          02 wcolor19 pic x(30) value space.
+          02 wname19 pic x(30) value space.
+          02 wdata19 pic x(200) value space.
+          02 wtime19 pic x(20) value space.
+          02 wcolor20 pic x(30) value space.
+          02 wname20 pic x(30) value space.
+          02 wdata20 pic x(200) value space.
+          02 wtime20 pic x(20) value space.
+          02 wcolor21 pic x(30) value space.
+          02 wname21 pic x(30) value space.
+          02 wdata21 pic x(200) value space.
+          02 wtime21 pic x(20) value space.
+          02 wcolor22 pic x(30) value space.
+          02 wname22 pic x(30) value space.
+          02 wdata22 pic x(200) value space.
+          02 wtime22 pic x(20) value space.
+          02 wcolor23 pic x(30) value space.
+          02 wname23 pic x(30) value space.
+          02 wdata23 pic x(200) value space.
+          02 wtime23 pic x(20) value space.
+          02 wcolor24 pic x(30) value space.
+          02 wname24 pic x(30) value space.
+          02 wdata24 pic x(200) value space.
+          02 wtime24 pic x(20) value space.
+          02 wcolor25 pic x(30) value space.
+          02 wname25 pic x(30) value space.
+          02 wdata25 pic x(200) value space.
+          02 wtime25 pic x(20) value space.
+          02 wcolor26 pic x(30) value space.
+          02 wname26 pic x(30) value space.
+          02 wdata26 pic x(200) value space.
+          02 wtime26 pic x(20) value space.
+          02 wcolor27 pic x(30) value space.
+          02 wname27 pic x(30) value space.
+          02 wdata27 pic x(200) value space.
+          02 wtime27 pic x(20) value space.
+          02 wcolor28 pic x(30) value space.
+          02 wname28 pic x(30) value space.
+          02 wdata28 pic x(200) value space.
+          02 wtime28 pic x(20) value space.
+          02 wcolor29 pic x(30) value space.
+          02 wname29 pic x(30) value space.
+          02 wdata29 pic x(200) value space.
+          02 wtime29 pic x(20) value space.
+          02 wcolor30 pic x(30) value space.
+          02 wname30 pic x(30) value space.
+          02 wdata30 pic x(200) value space.
+          02 wtime30 pic x(20) value space.
+          02 wcolor31 pic x(30) value space.
+          02 wname31 pic x(30) value space.
+          02 wdata31 pic x(200) value space.
+          02 wtime31 pic x(20) value space.
+          02 wcolor32 pic x(30) value space.
+          02 wname32 pic x(30) value space.
+          02 wdata32 pic x(200) value space.
+          02 wtime32 pic x(20) value space.
+          02 wcolor33 pic x(30) value space.
+          02 wname33 pic x(30) value space.
+          02 wdata33 pic x(200) value space.
+          02 wtime33 pic x(20) value space.
+          02 wcolor34 pic x(30) value space.
+          02 wname34 pic x(30) value space.
+          02 wdata34 pic x(200) value space.
+          02 wtime34 pic x(20) value space.
+          02 wcolor35 pic x(30) value space.
+          02 wname35 pic x(30) value space.
+          02 wdata35 pic x(200) value space.
+          02 wtime35 pic x(20) value space.
+          02 wcolor36 pic x(30) value space.
+          02 wname36 pic x(30) value space.
+          02 wdata36 pic x(200) value space.
+          02 wtime36 pic x(20) value space.
+          02 wcolor37 pic x(30) value space.
+          02 wname37 pic x(30) value space.
+          02 wdata37 pic x(200) value space.
+          02 wtime37 pic x(20) value space.
+          02 wcolor38 pic x(30) value space.
+          02 wname38 pic x(30) value space.
+          02 wdata38 pic x(200) value space.
+          02 wtime38 pic x(20) value space.
+          02 wcolor39 pic x(30) value space.
+          02 wname39 pic x(30) value space.
+          02 wdata39 pic x(200) value space.
+          02 wtime39 pic x(20) value space.
+          02 wcolor40 pic x(30) value space.
+          02 wname40 pic x(30) value space.
+          02 wdata40 pic x(200) value space.
+          02 wtime40 pic x(20) value space.
+          02 wscreenname pic x(200) value space.
+          02 wmode pic x(10) value space.
+      *
+       01 chat-param-in-tab redefines chat-param-in.
+          02 wname pic x(30).
+          02 wsenddata pic x(200).
+          02 wcolor pic x(30).
+          02 dat-table.
+            03 dat-table-item  occurs 40.
+              04 wcolor pic x(30).
+              04 wname pic x(30).
+              04 wdata pic x(200).
+              04 wtime pic x(20).
+          02 wscreenname pic x(200).
+          02 wmode2       pic x(10).
+      *
+       01 chat-param-ot.
+          02 wrefresh pic x(30) value space.
+          02 wname pic x(30) value space.
+          02 wsenddata pic x(200) value space.
+          02 wcolor1 pic x(30) value space.
+          02 wname1 pic x(30) value space.
+          02 wdata1 pic x(200) value space.
+          02 wtime1 pic x(20) value space.
+          02 wcolor2 pic x(30) value space.
+          02 wname2 pic x(30) value space.
+          02 wdata2 pic x(200) value space.
+          02 wtime2 pic x(20) value space.
+          02 wcolor3 pic x(30) value space.
+          02 wname3 pic x(30) value space.
+          02 wdata3 pic x(200) value space.
+          02 wtime3 pic x(20) value space.
+          02 wcolor4 pic x(30) value space.
+          02 wname4 pic x(30) value space.
+          02 wdata4 pic x(200) value space.
+          02 wtime4 pic x(20) value space.
+          02 wcolor5 pic x(30) value space.
+          02 wname5 pic x(30) value space.
+          02 wdata5 pic x(200) value space.
+          02 wtime5 pic x(20) value space.
+          02 wcolor6 pic x(30) value space.
+          02 wname6 pic x(30) value space.
+          02 wdata6 pic x(200) value space.
+          02 wtime6 pic x(20) value space.
+          02 wcolor7 pic x(30) value space.
+          02 wname7 pic x(30) value space.
+          02 wdata7 pic x(200) value space.
+          02 wtime7 pic x(20) value space.
+          02 wcolor8 pic x(30) value space.
+          02 wname8 pic x(30) value space.
+          02 wdata8 pic x(200) value space.
+          02 wtime8 pic x(20) value space.
+          02 wcolor9 pic x(30) value space.
+          02 wname9 pic x(30) value space.
+          02 wdata9 pic x(200) value space.
+          02 wtime9 pic x(20) value space.
+          02 wcolor10 pic x(30) value space.
+          02 wname10 pic x(30) value space.
+          02 wdata10 pic x(200) value space.
+          02 wtime10 pic x(20) value space.
+          02 wcolor11 pic x(30) value space.
+          02 wname11 pic x(30) value space.
+          02 wdata11 pic x(200) value space.
+          02 wtime11 pic x(20) value space.
+          02 wcolor12 pic x(30) value space.
+          02 wname12 pic x(30) value space.
+          02 wdata12 pic x(200) value space.
+          02 wtime12 pic x(20) value space.
+          02 wcolor13 pic x(30) value space.
+          02 wname13 pic x(30) value space.
+          02 wdata13 pic x(200) value space.
+          02 wtime13 pic x(20) value space.
+          02 wcolor14 pic x(30) value space.
+          02 wname14 pic x(30) value space.
+          02 wdata14 pic x(200) value space.
+          02 wtime14 pic x(20) value space.
+          02 wcolor15 pic x(30) value space.
+          02 wname15 pic x(30) value space.
+          02 wdata15 pic x(200) value space.
+          02 wtime15 pic x(20) value space.
+          02 wcolor16 pic x(30) value space.
+          02 wname16 pic x(30) value space.
+          02 wdata16 pic x(200) value space.
+          02 wtime16 pic x(20) value space.
+          02 wcolor17 pic x(30) value space.
+          02 wname17 pic x(30) value space.
+          02 wdata17 pic x(200) value space.
+          02 wtime17 pic x(20) value space.
+          02 wcolor18 pic x(30) value space.
+          02 wname18 pic x(30) value space.
+          02 wdata18 pic x(200) value space.
+          02 wtime18 pic x(20) value space.
+          02 wcolor19 pic x(30) value space.
+          02 wname19 pic x(30) value space.
+          02 wdata19 pic x(200) value space.
+          02 wtime19 pic x(20) value space.
+          02 wcolor20 pic x(30) value space.
+          02 wname20 pic x(30) value space.
+          02 wdata20 pic x(200) value space.
+          02 wtime20 pic x(20) value space.
+          02 wcolor21 pic x(30) value space.
+          02 wname21 pic x(30) value space.
+          02 wdata21 pic x(200) value space.
+          02 wtime21 pic x(20) value space.
+          02 wcolor22 pic x(30) value space.
+          02 wname22 pic x(30) value space.
+          02 wdata22 pic x(200) value space.
+          02 wtime22 pic x(20) value space.
+          02 wcolor23 pic x(30) value space.
+          02 wname23 pic x(30) value space.
+          02 wdata23 pic x(200) value space.
+          02 wtime23 pic x(20) value space.
+          02 wcolor24 pic x(30) value space.
+          02 wname24 pic x(30) value space.
+          02 wdata24 pic x(200) value space.
+          02 wtime24 pic x(20) value space.
+          02 wcolor25 pic x(30) value space.
+          02 wname25 pic x(30) value space.
+          02 wdata25 pic x(200) value space.
+          02 wtime25 pic x(20) value space.
+          02 wcolor26 pic x(30) value space.
+          02 wname26 pic x(30) value space.
+          02 wdata26 pic x(200) value space.
+          02 wtime26 pic x(20) value space.
+          02 wcolor27 pic x(30) value space.
+          02 wname27 pic x(30) value space.
+          02 wdata27 pic x(200) value space.
+          02 wtime27 pic x(20) value space.
+          02 wcolor28 pic x(30) value space.
+          02 wname28 pic x(30) value space.
+          02 wdata28 pic x(200) value space.
+          02 wtime28 pic x(20) value space.
+          02 wcolor29 pic x(30) value space.
+          02 wname29 pic x(30) value space.
+          02 wdata29 pic x(200) value space.
+          02 wtime29 pic x(20) value space.
+          02 wcolor30 pic x(30) value space.
+          02 wname30 pic x(30) value space.
+          02 wdata30 pic x(200) value space.
+          02 wtime30 pic x(20) value space.
+          02 wcolor31 pic x(30) value space.
+          02 wname31 pic x(30) value space.
+          02 wdata31 pic x(200) value space.
+          02 wtime31 pic x(20) value space.
+          02 wcolor32 pic x(30) value space.
+          02 wname32 pic x(30) value space.
+          02 wdata32 pic x(200) value space.
+          02 wtime32 pic x(20) value space.
+          02 wcolor33 pic x(30) value space.
+          02 wname33 pic x(30) value space.
+          02 wdata33 pic x(200) value space.
+          02 wtime33 pic x(20) value space.
+          02 wcolor34 pic x(30) value space.
+          02 wname34 pic x(30) value space.
+          02 wdata34 pic x(200) value space.
+          02 wtime34 pic x(20) value space.
+          02 wcolor35 pic x(30) value space.
+          02 wname35 pic x(30) value space.
+          02 wdata35 pic x(200) value space.
+          02 wtime35 pic x(20) value space.
+          02 wcolor36 pic x(30) value space.
+          02 wname36 pic x(30) value space.
+          02 wdata36 pic x(200) value space.
+          02 wtime36 pic x(20) value space.
+          02 wcolor37 pic x(30) value space.
+          02 wname37 pic x(30) value space.
+          02 wdata37 pic x(200) value space.
+          02 wtime37 pic x(20) value space.
+          02 wcolor38 pic x(30) value space.
+          02 wname38 pic x(30) value space.
+          02 wdata38 pic x(200) value space.
+          02 wtime38 pic x(20) value space.
+          02 wcolor39 pic x(30) value space.
+          02 wname39 pic x(30) value space.
+          02 wdata39 pic x(200) value space.
+          02 wtime39 pic x(20) value space.
+          02 wcolor40 pic x(30) value space.
+          02 wname40 pic x(30) value space.
+          02 wdata40 pic x(200) value space.
+          02 wtime40 pic x(20) value space.
+          02 wscreenname pic x(200) value space.
+          02 wmode pic x(10) value space.

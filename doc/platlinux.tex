@@ -1,0 +1,179 @@
+\subsubsection{WebサーバApacheの設定}
+
+ほとんどのLinuxディストリビューションではApacheのインストールが完了しているので、
+当資料ではインストールについては記述しません。
+
+インストール後に必要な設定のみ記述します。
+
+当資料のプログラム環境を整えるためにはApacheに、CGI実行,ユーザディレクトリ,別名定義モジュールを組み込む必要がある。
+
+\vspace{1em}
+{\gt 組み込みが必要なApacheモジュール}
+
+\begin{tabular}{|l|l|}
+\hline
+モジュール名 & モジュールファイル名 \\
+\hline
+CGI実行モジュール		&mod\_cgi.so	\\
+ユーザディレクトリモジュール	&mod\_userdir.so\\
+別名定義モジュール		&mod\_alias.so	\\
+\hline
+\end{tabular}
+
+実際の設定は以下の様になります。(以下の設定例ではapacheのバージョンを1.3としています。)
+
+FileName:/etc/apache/httpd.conf
+
+\begin{tabular}{|l|}
+\hline
+\verb+LoadModule cgi_module /usr/lib/apache/1.3/mod_cgi.so+\\
+\verb+LoadModule userdir_module /usr/lib/apache/1.3/mod_userdir.so+\\
+\verb+LoadModule alias_module /usr/lib/apache/1.3/mod_alias.so+\\
+\verb+AddHandler cgi-script .cgi+\\
+\verb+<Directory /home/cobol/public_html/cgi-bin>+\\
+\verb+Options +ExecCGI+\\
+\verb+</Directory>+\\
+\hline
+\end{tabular}
+
+または
+
+FileName:/usr/local/etc/apache/httpd.conf
+
+\begin{tabular}{|l|}
+\hline
+\verb+LoadModule cgi_module /usr/local/lib/apache/1.3/mod_cgi.so+\\
+\verb+LoadModule userdir_module /usr/local/lib/apache/1.3/mod_userdir.so+\\
+\verb+LoadModule alias_module /usr/local/lib/apache/1.3/mod_alias.so+\\
+\verb+AddHandler cgi-script .cgi+\\
+\verb+<Directory /home/cobol/public_html/cgi-bin>+\\
+\verb+Options +ExecCGI+\\
+\verb+</Directory>+\\
+\hline
+\end{tabular}
+
+{\gt ユーザ登録}
+
+COBOL開発用のユーザを登録する必要はありませんが、
+当資料の便宜上として{\gt cobol}ユーザを登録します。
+
+以下のコマンドは、root(スーパユーザ)にて行ってください。
+
+\begin{tabular}{|l|}
+\hline
+\verb&# useradd -m -d /home/cobol cobol&\\
+\verb&# passwd cobol&\\
+\verb&Enter new UNIX password: &\\
+\verb&Retype new UNIX password: &\\
+\verb&passwd: password updated successfully&\\
+\hline
+\end{tabular}
+Enter new UNIX password:にcobolユーザのパスワードを入力してください。
+
+Retype new UNIX password:にはEnter new UNIX passwordにて入力したパスワードをもう一度入力してください。
+
+CGIファイルを格納するディレクトリを作成します。
+
+\begin{tabular}{|l|}
+\hline
+\verb&mkdir -p /home/cobol/public_html/cgi-bin&\\
+\verb&chown cobol:cobol /home/cobol/public_html/cgi-bin&\\
+\verb&chown cobol:cobol /home/cobol/public_html&\\
+\verb&chmod 755 /home/cobol/public_html/cgi-bin&\\
+\verb&chmod 755 /home/cobol/public_html&\\
+\hline
+\end{tabular}
+
+ 
+\subsubsection{COBOLコンパイラのインストール}
+
+当資料で使用するCOBOLコンパイラOPEN COBOL,TinyCobolのインストール方法を紹介します。
+
+\begin{itemize}
+
+\item{OPEN COBOLのインストール}
+
+OPEN COBOLは{\it http://www.open-cobol.org/}よりダウンロード出来ます。
+
+{\it http://www.open-cobol.org/}より{\it open-cobol-0.10.tar.gz}をダウンロードし、以下の手順でコンパイルします。
+
+\begin{tabular}{|l|}
+\hline
+\verb+# tar zxvf open-cobol-0.10.tar.gz+\\
+\verb+# cd open-cobol-0.10+\\
+\verb+# ./configure+\\
+\verb+# make+\\
+\verb+# su+\\
+\verb+Password: スーパユーザのパスワードを入力+\\
+\verb+# make install+\\
+\hline
+\end{tabular}
+
+以下のファイルがインストールされます。
+
+\begin{tabular}{ll}
+/usr/local/bin/cobc           &COBOLコンパイラ\\
+/usr/local/bin/cobpp          &COBOLプリプロセッサ\\
+/usr/local/lib/libcob.a       &COBOLライブラリアーカイブ \\
+/usr/local/lib/libcob.la      &COBOLライブラリlibtool用ファイル\\
+/usr/local/lib/libcob.so      &COBOL共有ライブラリ\\
+/usr/local/lib/libcob.so.0    &COBOL共有ライブラリ\\
+/usr/local/lib/libcob.so.0.0.0&COBOL共有ライブラリ\\
+\end{tabular}
+
+注意:./configureにてエラーが発生した場合、必要なモジュールを組み込んでください。
+
+\item{TinyCobolのインストール}
+
+TinyCobolは{\it http://tiny-cobol.sourceforge.net/}よりダウンロード出来ます。
+
+{\it http://tiny-cobol.sourceforege.net/}より{\it tinycobol-0.58.tar.gz}をダウンロードし、以下の手順でコンパイルします。
+
+\begin{tabular}{|l|}
+\hline
+\verb+# tar zxvf tinycobol-0.58.tar.gz+\\
+\verb+# cd tinycobl-0.58+\\
+\verb+# ./configure+\\
+\verb+# make+\\
+\verb+# su+\\
+\verb+Password: スーパユーザのパスワードを入力+\\
+\verb+# make install+\\
+\hline
+\end{tabular}
+
+以下のファイルがインストールされます。
+
+\begin{tabular}{ll}
+/usr/local/bin/htcobol            &COBOLコンパイラ\\
+/usr/local/bin/cobpp              &COBOLプリプロセッサ\\
+/usr/local/man/man1/htcobol.1     &オンラインマニュアル\\
+/usr/local/man/man1/htcobf2f.1    &オンラインマニュアル\\
+/usr/local/man/man1/htcobolpp.1   &オンラインマニュアル\\
+/usr/local/lib/libhtcobol.a       &COBOLライブラリアーカイブ\\
+/usr/local/lib/libhtcobol2.a      &COBOLライブラリアーカイブ\\
+\end{tabular}
+
+注意:./configureにてエラーが発生した場合、必要なモジュールを組み込んでください。
+
+\end{itemize}
+
+\subsubsection{COBOL Webインタフェースのインストール}
+
+当資料で紹介しているCOBOL Webインタフェースをインストールします。
+COBOL Webインタフェースはソースモジュールによる配布としております。
+
+{\it http://pulse.homeip.net/webif.html}より{\it web.0.3.tar.gz}をダウンロードします。
+
+\$ tar zxvf web.0.3.tar.gz
+
+\$ make libweb.a
+
+\$ make install
+
+以上でインストールは終了です。
+
+
+
+
+
+

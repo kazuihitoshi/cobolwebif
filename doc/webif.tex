@@ -1,0 +1,46 @@
+当資料で使用するCOBOL Webインタフェースのインストール方法を紹介します。
+
+COBOL Webインタフェースは{\it http://www.pulse.homeip.net/webif.html}よりダウンロード出来ます。
+
+{\it http://www.pulse.homeip.net/webif.html}より{\it web.0.1.tar.gz}をダウンロードし、以下の手順でコンパイルします。
+
+\begin{tabular}{|l|}
+\hline
+\verb+# mkdir web.0.1+\\
+\verb+# cd web.0.1+\\
+\verb+# tar zxvf ../web.0.1.tar.gz+\\
+\verb+# make+\\
+\verb+# su+\\
+\verb+Password: スーパユーザのパスワードを入力+\\
+\verb+# make install+\\
+\hline
+\end{tabular}
+
+以下のファイルがインストールされます。
+
+\begin{tabular}{ll}
+/usr/local/lib/libweb.a       &ライブラリ本体\\
+\end{tabular}
+
+尚、make install にて以下モジュールもコンパイルされています。
+
+cgi-bin以下にコピーしてもらえれば、動作させてみることが出来ます。
+
+\begin{tabular}{ll}
+./addsample        &足し算サンプル\\
+sample/addsample.html &足し算サンプルのhtml\\
+./calcsample       &四則演算サンプル\\
+sample/calcsample.html &四則演算サンプルのhtml\\
+\end{tabular}
+
+
+注意:./configureにてエラーが発生した場合、必要なモジュールを組み込んでください。
+
+
+
+
+
+
+
+
+

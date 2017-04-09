@@ -1,0 +1,44 @@
+<HTML LANG="ja" DIR="LTR">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=X-EUC-JP">
+<title>チャット</title>
+<body>
+<FORM ACTION="chat.cgi" METHOD="POST" target="@TARGET" NAME="login">
+  お名前
+<INPUT TYPE="TEXT" NAME="NAME" SIZE="32" MAXLENGTH="30" VALUE="@NAME" >
+   <select name="COLOR">
+    <option value="#000000" @COLOR:#000000:SELECTED:>black  </option>
+    <option value="#0000ff" @COLOR:#0000ff:SELECTED:>blue   </option>
+    <option value="#00ffff" @COLOR:#00ffff:SELECTED:>aqua   </option>
+    <option value="#808000" @COLOR:#808000:SELECTED:>olive  </option>
+    <option value="#808080" @COLOR:#808080:SELECTED:>gray   </option>
+    <option value="#000080" @COLOR:#000080:SELECTED:>navy   </option>
+    <option value="#00ff00" @COLOR:#00ff00:SELECTED:>lime   </option>
+    <option value="#800080" @COLOR:#800080:SELECTED:>purple </option>
+    <option value="#c0c0c0" @COLOR:#c0c0c0:SELECTED:>silver </option>
+    <option value="#008080" @COLOR:#008080:SELECTED:>teal   </option>
+    <option value="#ffff00" @COLOR:#ffff00:SELECTED:>yellow </option>
+    <option value="#800000" @COLOR:#800000:SELECTED:>maroon </option>
+    <option value="#008000" @COLOR:#ffff00:SELECTED:>green  </option>
+    <option value="#ff00ff" @COLOR:#ff00ff:SELECTED:>magenta</option>
+    <option value="#ff0000" @COLOR:#ff0000:SELECTED:>red    </option>
+   </select>
+<input type="submit" value="ログイン">
+<input type="reset"  value="取消">
+<br>
+<h2>@MESSAGE1</h2><br>
+<h2>@MESSAGE2</h2><br>
+<h2>@MESSAGE3</h2><br>
+
+</form>
+<script>
+function START(theEvent){
+  self.document.login.NAME.focus();
+}
+window.onload = START;
+</script>
+
+</html>
+
+
+
+

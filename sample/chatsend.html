@@ -1,0 +1,43 @@
+<HTML LANG="ja" DIR="LTR">
+<meta http-equiv="content-type" content="text/html"; charset=X-EUC-JP">
+<!--
+--!>
+<script language="JavaScript">
+function START(theEvent){
+  self.document.chat.MODE[1].click();
+  self.document.chat.SENDDATA.focus();
+}
+window.onload = START;
+setTimeout("self.document.chat.MODE[1].click()",5000);
+</script>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=X-EUC-JP">
+  <FORM NAME="chat" ACTION="chat.cgi" METHOD="POST" target="@TARGET">
+@NAME
+   <select name="COLOR">
+    <option value="#000000" @COLOR:#000000:SELECTED:>black  </option>
+    <option value="#0000ff" @COLOR:#0000ff:SELECTED:>blue   </option>
+    <option value="#00ffff" @COLOR:#00ffff:SELECTED:>aqua   </option>
+    <option value="#808000" @COLOR:#808000:SELECTED:>olive  </option>
+    <option value="#808080" @COLOR:#808080:SELECTED:>gray   </option>
+    <option value="#000080" @COLOR:#000080:SELECTED:>navy   </option>
+    <option value="#00ff00" @COLOR:#00ff00:SELECTED:>lime   </option>
+    <option value="#800080" @COLOR:#800080:SELECTED:>purple </option>
+    <option value="#c0c0c0" @COLOR:#c0c0c0:SELECTED:>silver </option>
+    <option value="#008080" @COLOR:#008080:SELECTED:>teal   </option>
+    <option value="#ffff00" @COLOR:#ffff00:SELECTED:>yellow </option>
+    <option value="#800000" @COLOR:#800000:SELECTED:>maroon </option>
+    <option value="#008000" @COLOR:#ffff00:SELECTED:>green  </option>
+    <option value="#ff00ff" @COLOR:#ff00ff:SELECTED:>magenta</option>
+    <option value="#ff0000" @COLOR:#ff0000:SELECTED:>red    </option>
+   </select>
+ 発言<INPUT TYPE="TEXT" NAME="SENDDATA" SIZE="62" MAXLENGTH="200" VALUE="@SENDDATA">
+
+ <input type="submit" name="MODE" value="送信" $MODE>
+ <input type="submit" name="MODE" value="Reload" $MODE>
+ <input type="reset"  value="取消">
+</FORM>
+</HTML>
+
+
+
+

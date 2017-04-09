@@ -1,0 +1,128 @@
+{\gt html} calcsample.html
+
+{\footnotesize 
+\begin{tabular}{|l|}
+\hline
+\vspace{-0.4em}\verb!<html lang="ja" dir="ltr">!\\
+\vspace{-0.4em}\verb!<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">!\\
+\vspace{-0.4em}\verb!<FORM action="calcsample.cgi" METHOD="POST">!\\
+\vspace{-0.4em}\verb!四則演算処理のサンプルです。<br><br>!\\
+\vspace{-0.4em}\verb!<input type="text" name="DATA1" maxlength="12" size="15" value="@DATA1">!\\
+\vspace{-0.4em}\verb!<select name="WMODE">!\\
+\vspace{-0.4em}\verb! <option value="a" @WMODE:a:SELECTED:>+  ＋</option>!\\
+\vspace{-0.4em}\verb! <option value="s" @WMODE:s:SELECTED:>-  −</option>!\\
+\vspace{-0.4em}\verb! <option value="m" @WMODE:m:SELECTED:>*  ×</option>!\\
+\vspace{-0.4em}\verb! <option value="d" @WMODE:d:SELECTED:>/  ÷</option>!\\
+\vspace{-0.4em}\verb!</select>!\\
+\vspace{-0.4em}\verb!<input type="text" name="DATA2" maxlength="12" size="15" value="@DATA2">＝@RESULT!\\
+\vspace{-0.4em}\verb!<input type="submit" value="実行">!\\
+\vspace{-0.4em}\verb!<input type="reset" value="取消">!\\
+\vspace{-0.4em}\verb!@あいうえお!\\
+\vspace{-0.4em}\verb!</FORM>!\\
+\vspace{-0.4em}\verb!</html>!\\
+\\
+\hline
+\end{tabular}
+}
+
+\vspace{1em}
+{\gt cobol source} calcsample.cob
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+\vspace{-0.4em}\verb!       IDENTIFICATION        DIVISION.!\\
+\vspace{-0.4em}\verb!       PROGRAM-ID.           calcsample.!\\
+\vspace{-0.4em}\verb!       AUTHOR.               kazui.!\\
+\vspace{-0.4em}\verb!       ENVIRONMENT           DIVISION.!\\
+\vspace{-0.4em}\verb!       CONFIGURATION         SECTION.!\\
+\vspace{-0.4em}\verb!       INPUT-OUTPUT          SECTION.!\\
+\vspace{-0.4em}\verb!       DATA                  DIVISION.!\\
+\vspace{-0.4em}\verb!       WORKING-STORAGE SECTION. !\\
+\vspace{-0.4em}\verb!       01 webif-rec.!\\
+\vspace{-0.4em}\verb!         02 filler pic x(20) value 'WMODE'.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 wmode  pic x value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x(20) value 'DATA1'.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 data1  pic x(12) value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x(20) value 'DATA2'.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 data2 pic x(12) value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x(20) value 'RESULT'.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 result pic x(13) value space.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!         02 filler pic x value low-value.!\\
+\vspace{-0.4em}\verb!       01  webif-in.!\\
+\vspace{-0.4em}\verb!         02 wmode  pic x.!\\
+\vspace{-0.4em}\verb!         02 data1  pic 9(12).!\\
+\vspace{-0.4em}\verb!         02 data2  pic s9(12).!\\
+\vspace{-0.4em}\verb!         02 result pic s9(12).!\\
+\vspace{-0.4em}\verb!       01  webif-ot.!\\
+\vspace{-0.4em}\verb!         02 wmode  pic x.!\\
+\vspace{-0.4em}\verb!         02 data1  pic zzzzzzzzzzz9.!\\
+\vspace{-0.4em}\verb!         02 data2  pic zzzzzzzzzzz9.!\\
+\vspace{-0.4em}\verb!         02 result pic -zzzzzzzzzzz9.!\\
+\vspace{-0.4em}\verb!       77 w-x pic x.!\\
+\vspace{-0.4em}\verb!       PROCEDURE             DIVISION.!\\
+\vspace{-0.4em}\verb!       MAIN-PROC             SECTION.!\\
+\vspace{-0.4em}\verb!       MAIN-PROC-1.!\\
+\vspace{-0.4em}\verb!          call 'WEB_GET_QUERY_STRING'.!\\
+\vspace{-0.4em}\verb!          call 'WEB_POP' using webif-rec.!\\
+\vspace{-0.4em}\verb!          move corr webif-rec to webif-in.!\\
+\vspace{-0.4em}\verb!          evaluate wmode of webif-in!\\
+\vspace{-0.4em}\verb!           when 'a'!\\
+\vspace{-0.4em}\verb!            compute result of webif-in = data1 of webif-in +!\\
+\vspace{-0.4em}\verb!                                       data2 of webif-in!\\
+\vspace{-0.4em}\verb!           when 's'!\\
+\vspace{-0.4em}\verb!            compute result of webif-in = data1 of webif-in -!\\
+\vspace{-0.4em}\verb!                                       data2 of webif-in!\\
+\vspace{-0.4em}\verb!           when 'm'!\\
+\vspace{-0.4em}\verb!            compute result of webif-in = data1 of webif-in *!\\
+\vspace{-0.4em}\verb!                                       data2 of webif-in!\\
+\vspace{-0.4em}\verb!           when 'd'!\\
+\vspace{-0.4em}\verb!            if data2 of webif-in = zero then!\\
+\vspace{-0.4em}\verb!              move zero to result of webif-in!\\
+\vspace{-0.4em}\verb!             else!\\
+\vspace{-0.4em}\verb!            compute result of webif-in = data1 of webif-in /!\\
+\vspace{-0.4em}\verb!                                       data2 of webif-in!\\
+\vspace{-0.4em}\verb!            end-if!\\
+\vspace{-0.4em}\verb!          end-evaluate.!\\
+\vspace{-0.4em}\verb!          move corr webif-in to webif-ot.!\\
+\vspace{-0.4em}\verb!          move corr webif-ot to webif-rec.!\\
+\vspace{-0.4em}\verb!          call 'WEB_PUSH' using webif-rec.!\\
+\vspace{-0.4em}\verb!          call 'WEB_SHOW'.!\\
+\vspace{-0.4em}\verb!          STOP RUN.!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\vspace{-0.4em}\verb!!\\
+\\
+\hline
+\end{tabular}
+}
+
+{\gt メニューHTML(起動用のHTML定義)}
+
+\begin{tabular}{|l|}
+\hline
+\verb+<html lang="ja" dir="ltr">+\\
+\verb+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">+\\
+\verb+<a href="/cgi-bin/calcsample?screenname=calcsample.html">四則演算サンプル</a>+\\
+\verb+</html>+\\
+\hline
+\end{tabular}

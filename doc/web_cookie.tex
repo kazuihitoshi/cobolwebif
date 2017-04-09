@@ -1,0 +1,64 @@
+
+\begin{itemize}
+\item{書式}
+
+{\gt COOKIEコピー句の読込}
+
+\begin{tabular}{|l|}
+\hline
+WORKING-STORAGE SECTION.\\
+COPY web-cookie.\\
+77  rc  pic s9(10).\\
+\hline
+\end{tabular}
+
+{\gt クッキーのセッティング}
+
+\begin{tabular}{|l|}
+\hline
+INITIALIZE WEB-COOKIE.
+MOVE 'クッキー変数名' TO WEB-NAME.\\
+MOVE '変数内容'       TO WEB-VALUE.\\
+MOVE '変数の期限'     TO WEB-EXPIRES.\\
+MOVE '有効パス'       TO WEB-PATH.\\
+MOVE 'ドメイン名'     TO WEB-DOMAIN.\\
+MOVE 'SECURE'         TO WEB-SECURE.\\
+CALL 'WEB\_SET\_COOKIE' using WEB-COOKIE rc.\\
+\hline
+\end{tabular}
+
+{\gt 受信クッキーの取得}
+
+\begin{tabular}{|l|}
+\hline
+CALL 'WEB\_POP\_COOKIE' using WEB\_POP,WEB\_PUSH変数領域名.\\
+\hline
+\end{tabular}
+
+\item{機能}
+
+クッキーの設定及び取得機能を実現する。
+クッキーはブラウザに記憶させる変数であり、クッキー設定を行ったサイトを開く際にブラウザからサーバに送信される物です。
+
+クッキーには有効期限をつけたり、サイトのディレクトリパスを限定する事も可能です。
+
+また、セキュアサイトでのみ有効とする設定も可能です。
+
+クッキーの実際の受信はCALL 'WEB\_GET\_QUERY\_STRING'にて行います。
+その後、CALL 'WEB\_POP\_COOKIE'にて変数の値を取り出します。
+
+クッキーの設定ははCALL 'WEB\_SET\_COOKIE'にて行いますが、実際にブラウザに値が送信されるのは
+
+CALL 'WEB\_SHOW'が実行された時と、CALL 'WEB\_SEND\_COOKIE'が実行されたときです。
+
+CALL 'WEB\_SHOW'はSCREENNAMEで指定されるhtmlファイルをWEB\_PUSH,WEB\_POP領域と合成してブラウザへ送信します。
+
+DISPLAYステートメント等によりブラウザ送信用のHTMLファイルを生成する場合はWEB\_SEND\_COOOKIEを使用してください。
+
+\vspace{1em}
+
+
+\end{itemize}
+
+
+

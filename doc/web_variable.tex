@@ -1,0 +1,177 @@
+
+Web APIグローバル領域とCOBOL変数領域の引き渡し空間を定義します。
+
+変数領域は{\it WORKING-STRAGE SECTION.}に定義します。
+
+定義方式は
+
+変数名称1 + NULL + 変数属性1 + NULL + 変数領域1 + NULL + 変数名称2 + NULL + 変数属性2 + NULL + 変数領域2 + NULL .... 変数名称n + NULL + 変数属性n + NULL + 変数領域n + NULL + NULL
+
+のメモリイメージになるように変数領域を記述する。最後のNULLは2つ連続していなければなりません。
+
+
+変数属性は今後の拡張領域のため、現時点ではスペースを記述しておけば問題ありません。
+
+将来的には左寄せ(デフォルトは右寄せ)や、数値のみ入力などの制御が可能となる予定です。
+
+コーディング書式は次のようになります。
+
+{\gt コーディング書式}
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+ working-strage section.                                              \\
+ 01 web-if-rec.                                                       \\
+   02  filler pic x(変数名称のデータサイズ) value '変数名称'.           \\
+   02  filler pic x     value low-value.                              \\
+   02  filler pic x     value space.                                  \\
+   02  filler pic x     value low-value.                              \\
+   02 変数名のデータ領域名 pic x(変数名データサイズ) value space.       \\
+   02  filler pic x     value low-value.                              \\
+   02  filler pic x(変数名称2データサイズ) value '変数名称2'.       \\
+   02  filler pic x     value low-value.                              \\
+   02  filler pic x     value space.                                  \\
+   02  filler pic x     value low-value.                              \\
+   02 変数名2のデータ領域名  pic x(変数名2データサイズ) value space.      \\
+   02  filler pic x     value low-value.                              \\
+            :       :                                                 \\
+   02  filler pic x(変数名nの名称データサイズ) value '変数名n'.       \\
+   02  filler pic x     value low-value.                              \\
+   02  filler pic x     value space.                                  \\
+   02  filler pic x     value low-value.                              \\
+   02 変数名nのデータ領域名  pic x(変数名nデータサイズ) value space.      \\
+   02  filler pic x     value low-value.                              \\
+   02 filler pic x     value low-value.                               \\
+\hline
+\end{tabular}
+}
+
+\vspace{0.5em}
+
+{\small
+追記事項:
+
+\begin{itemize}
+\item{変数名称 ・・・半角英数字のみで表記、変数名の英字は大文字小文字の区別は無い。}
+\item{変数名のデータ領域名 ・・・実データが保存される領域。}
+\end{itemize}
+}
+
+{\gt 例 CGIよりNAME,EMAIL変数が渡される場合のコーディング例}
+
+\vspace{0.5em}
+
+{\footnotesize
+\begin{tabular}{|l|r|l|}
+\hline
+入力項目名 & 桁数 & 変数名 \\\hline
+ATAI1       &  12  & ATAI1  \\\hline
+ATAI2       &  12  & ATAI2  \\\hline
+KOTAE       &  13  & KOTAE  \\
+\hline
+\end{tabular}
+}
+\vspace{1em}
+
+コーディング例は以下の様になります。
+
+\vspace{0.5em}
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+\verb+working-strage section.+\\
+\verb+01 web-if-rec.+\\
+\verb+ 02 filler pic x(5)  value 'ATAI1'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 ATAI1  pic x(12) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x(5)  value 'ATAI2'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 ATAI2  pic x(12) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x(5)  value 'KOTAE'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 KOTAE  pic x(13) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\hline
+\end{tabular}
+}
+
+このWEB\_POP,WEB\_PUSH変数領域は、実際には以下の様にして使用します。
+\vspace{1em}
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+\verb+working-strage section.+\\
+\verb+01 web-if-rec.+\\
+\verb+ 02 filler pic x(5)  value 'ATAI1'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 ATAI1  pic x(12) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x(5)  value 'ATAI2'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 ATAI2  pic x(12) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x(5)  value 'KOTAE'.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 KOTAE  pic x(13) value space.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+ 02 filler pic x     value low-value.+\\
+\verb+01 web-in-rec.+\\
+\verb+  02 ATAI1   pic 9(12).+\\
+\verb+  02 ATAI2   pic 9(12).+\\
+\verb+  02 KOTAE   pic 9(12).+\\
+\verb+01 web-ot-rec.+\\
+\verb+  02 ATAI1   pic ZZZZZZZZZZZ9.+\\
+\verb+  02 ATAI2   pic ZZZZZZZZZZZ9.+\\
+\verb+  02 KOTAE   pic ZZZZZZZZZZZ9.+\\
+\verb+ procedure division.+\\
+\verb+    call 'WEB_GET_QUERY_STRING'+\\
+\verb+    call 'WEB_POP' using web-if-rec.+\\
+\verb+    move corr web-if-rec to web-in-rec.+\\
+  処理 サンプルなので足し算を行う\\
+\verb$    compute KOTAE of web-in-rec = ATAI1 of web-in-rec + ATAI2 of web-in-rec.$\\
+  出力用に数値を編集\\
+\verb+   move corr web-in-rec to web-ot-rec.+\\
+WEBインタフェース領域へコピー\\
+\verb+   move corr web-ot-rec to web-if-rec.+\\
+\verb+   call 'WEB_PUSH' using web-if-rec.+\\
+\verb+   call 'WEB_SHOW'.+\\
+\verb+   stop run.+\\
+\hline
+\end{tabular}
+}
+
+流れを示すと、
+
+{\small
+
+\begin{itemize}
+
+\item[(1)]{CGI変数を受け取る。}
+\item[(2)]{web-if-rec エリアにCGIから受け取った値を格納する。}
+\item[(3)]{web-if-rec エリアを処理で扱いやすい web-in-rec へコピーする。}
+\item[(4)]{web-in-recをベースに処理を行う。}
+\item[(5)]{web-in-recの内容を出力形式編集領域web-ot-recへコピーする。}
+\item[(6)]{web-ot-recをCGIエリアweb-in-recへ転送する。(web-in-recには所定の様式編集がなされた値が入る）}
+\item[(7)]{web-in-recを元にHTMLを合成する。}
+\end{itemize}
+}
+
+となります。

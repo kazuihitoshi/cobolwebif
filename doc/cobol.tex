@@ -1,0 +1,74 @@
+当資料で使用するCOBOLコンパイラOPEN COBOL,TinyCobolのインストール方法を紹介します。
+
+\subsubsection{OPEN COBOLのインストール}
+
+OPEN COBOLは{\it http://www.open-cobol.org/}よりダウンロード出来ます。
+
+{\it http://www.open-cobol.org/}より{\it open-cobol-0.10.tar.gz}をダウンロードし、以下の手順でコンパイルします。
+
+\begin{tabular}{|l|}
+\hline
+\verb+# tar zxvf open-cobol-0.10.tar.gz+\\
+\verb+# cd open-cobol-0.10+\\
+\verb+# ./configure+\\
+\verb+# make+\\
+\verb+# su+\\
+\verb+Password: スーパユーザのパスワードを入力+\\
+\verb+# make install+\\
+\hline
+\end{tabular}
+
+以下のファイルがインストールされます。
+
+\begin{tabular}{ll}
+/usr/local/bin/cobc           &COBOLコンパイラ\\
+/usr/local/bin/cobpp          &COBOLプリプロセッサ\\
+/usr/local/lib/libcob.a       &COBOLライブラリアーカイブ \\
+/usr/local/lib/libcob.la      &COBOLライブラリlibtool用ファイル\\
+/usr/local/lib/libcob.so      &COBOL共有ライブラリ\\
+/usr/local/lib/libcob.so.0    &COBOL共有ライブラリ\\
+/usr/local/lib/libcob.so.0.0.0&COBOL共有ライブラリ\\
+\end{tabular}
+
+注意:./configureにてエラーが発生した場合、必要なモジュールを組み込んでください。
+
+\subsubsection{TinyCobolのインストール}
+
+TinyCobolは{\it http://tiny-cobol.sourceforge.net/}よりダウンロード出来ます。
+
+{\it http://tiny-cobol.sourceforege.net/}より{\it tinycobol-0.58.tar.gz}をダウンロードし、以下の手順でコンパイルします。
+
+\begin{tabular}{|l|}
+\hline
+\verb+# tar zxvf tinycobol-0.58.tar.gz+\\
+\verb+# cd tinycobl-0.58+\\
+\verb+# ./configure+\\
+\verb+# make+\\
+\verb+# su+\\
+\verb+Password: スーパユーザのパスワードを入力+\\
+\verb+# make install+\\
+\hline
+\end{tabular}
+
+以下のファイルがインストールされます。
+
+\begin{tabular}{ll}
+/usr/local/bin/htcobol            &COBOLコンパイラ\\
+/usr/local/bin/cobpp              &COBOLプリプロセッサ\\
+/usr/local/man/man1/htcobol.1     &オンラインマニュアル\\
+/usr/local/man/man1/htcobf2f.1    &オンラインマニュアル\\
+/usr/local/man/man1/htcobolpp.1   &オンラインマニュアル\\
+/usr/local/lib/libhtcobol.a       &COBOLライブラリアーカイブ\\
+/usr/local/lib/libhtcobol2.a      &COBOLライブラリアーカイブ\\
+\end{tabular}
+
+注意:./configureにてエラーが発生した場合、必要なモジュールを組み込んでください。
+
+
+
+
+
+
+
+
+

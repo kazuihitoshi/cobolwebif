@@ -1,0 +1,116 @@
+<html lang="ja" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=x-euc-jp">
+<form action="kozukaiupdate.cgi" method="post">
+<title>小遣い帳</title><br><br>
+
+<fieldset>
+ <legend>登録情報</legend>
+ 日付<input type="text" name="DATE_REC" maxlength="8" size="10" value="@DATE_REC">
+ シーケンス<input type="text" name="DATE_SEC" maxlength="2" size="4"  value="@DATE_SEC">
+ 分類
+ <select name="CATEGORY">
+  <option value="01" @CATEGORY:01:SELECTED:>小遣</option>
+  <option value="02" @CATEGORY:02:SELECTED:>雑収入</option>
+  <option value="10" @CATEGORY:10:SELECTED:>食費</option>
+  <option value="11" @CATEGORY:11:SELECTED:>交際費</option>
+  <option value="12" @CATEGORY:12:SELECTED:>雑費支出</option>
+  <option value="13" @CATEGORY:13:SELECTED:>交通費</option>
+ </select>
+ 入出
+ <select name="IN_OR_OUT">
+  <option value="1" @IN_OR_OUT:1:SELECTED:>収入</option>
+  <option value="2" @IN_OR_OUT:2:SELECTED:>支出</option>
+ </select>
+ 金額<input type="text" name="MONEY" maxlength="10" size="12"  value="@MONEY">
+ メモ<input type="text" name="NOTE" maxlength="80" size="30"  value="@NOTE">
+ <input type="submit" name="MODE" value="追加">
+ <input type="submit" name="MODE" value="更新">
+ <input type="reset"  name="MODE" value="取消">
+</fieldset>
+<br>
+<fieldset>
+<legend>検索内容</legend>
+スタートコード
+<input type="text" name="SEL_DATE_REC" maxlength="8" size="10" value="@SEL_DATE_REC">
+<input type="text" name="SEL_DATE_SEC" maxlength="2" size="4" value="@SEL_DATE_SE">
+<input type="submit" name="MODE" value="検索">
+<input type="submit" name="MODE" value="削除">
+<br>
+<table border="1">
+<th></th><th>日付</th><th>SEQ</th><th>分類</th><th>入出</th><th>金額</th><th>メモ</th><th>削除</th>
+<TR>
+  <TD><button type="submit" name="MODE" value="更新選択@DATE_REC1@DATE_SEC1">更新選択</button>
+ </TD>
+ <TD>@DATE_REC1</TD><TD>@DATE_SEC1</TD><TD>@CATEGORY1</TD><TD>@IN_OR_OUT1</TD><TD>@MONEY1</TD><TD>@NOTE1</TD><td><input type="checkbox" name="DELETE1" value="@DATE_REC1@DATE_SEC1"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC2">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC2">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC2</TD><TD>@DATE_SEC2</TD><TD>@CATEGORY2</TD><TD>@IN_OR_OUT2</TD><TD>@MONEY2</TD><TD>@NOTE2</TD><td><input type="checkbox" name="DELETE2" value="@DATE_REC2@DATE_SEC2"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC3">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC3">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC3</TD><TD>@DATE_SEC3</TD><TD>@CATEGORY3</TD><TD>@IN_OR_OUT3</TD><TD>@MONEY3</TD><TD>@NOTE3</TD><td><input type="checkbox" name="DELETE3" value="@DATE_REC3@DATE_SEC3"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC4">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC4">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC4</TD><TD>@DATE_SEC4</TD><TD>@CATEGORY4</TD><TD>@IN_OR_OUT4</TD><TD>@MONEY4</TD><TD>@NOTE4</TD><td><input type="checkbox" name="DELETE4" value="@DATE_REC4@DATE_SEC4"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC5">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC5">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC5</TD><TD>@DATE_SEC5</TD><TD>@CATEGORY5</TD><TD>@IN_OR_OUT5</TD><TD>@MONEY5</TD><TD>@NOTE5</TD><td><input type="checkbox" name="DELETE5" value="@DATE_REC5@DATE_SEC5"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC6">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC6">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC6</TD><TD>@DATE_SEC6</TD><TD>@CATEGORY6</TD><TD>@IN_OR_OUT6</TD><TD>@MONEY6</TD><TD>@NOTE6</TD><td><input type="checkbox" name="DELETE6" value="@DATE_REC6@DATE_SEC6"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC7">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC7">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC7</TD><TD>@DATE_SEC7</TD><TD>@CATEGORY7</TD><TD>@IN_OR_OUT7</TD><TD>@MONEY7</TD><TD>@NOTE7</TD><td><input type="checkbox" name="DELETE7" value="@DATE_REC7@DATE_SEC7"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC8">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC8">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC8</TD><TD>@DATE_SEC8</TD><TD>@CATEGORY8</TD><TD>@IN_OR_OUT8</TD><TD>@MONEY8</TD><TD>@NOTE8</TD><td><input type="checkbox" name="DELETE8" value="@DATE_REC8@DATE_SEC8"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC9">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC9">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC9</TD><TD>@DATE_SEC9</TD><TD>@CATEGORY9</TD><TD>@IN_OR_OUT9</TD><TD>@MONEY9</TD><TD>@NOTE9</TD><td><input type="checkbox" name="DELETE9" value="@DATE_REC9@DATE_SEC9"></td></TR>
+<TR>
+  <TD><form action="kozukaiupdate.cgi" method="post">
+       <input type="hidden" name="DATE_REC" value="@DATE_REC10">
+       <input type="hidden" name="DATE_SEC" value="@DATE_SEC10">
+       <input type="submit" name="MODE" value="更新選択">
+  </form></TD>
+ <TD>@DATE_REC10</TD><TD>@DATE_SEC10</TD><TD>@CATEGORY10</TD><TD>@IN_OR_OUT10</TD><TD>@MONEY10</TD><TD>@NOTE10</TD><td><input type="checkbox" name="DELETE10" value="@DATE_REC10@DATE_SEC10"></td></TR>
+</table>
+</fieldset>
+</form>
+
+</html>
+
+
+
+

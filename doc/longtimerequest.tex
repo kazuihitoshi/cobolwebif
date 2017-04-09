@@ -1,0 +1,66 @@
+
+CGIで処理時間を必要とする処理を行う場合、処理が終了するまで再リクエストを遮断する必要があります。
+
+CGIの場合、再リクエストがなされると前回のリクエストの処理はそのままに（処理中であっても）、
+再リクエストに対する処理が起動されます。
+
+なかなかレスポンスが無い場合、オペレータはボタンを連打するなどの反応を示す場合があります。
+この場合、永久にレスポンスは返らない事になります。
+
+再リクエストを遮断する方法は多種多様であるが、ここではJAVA Scriptを使用し、
+Webブラウザ側で再リクエストを遮断する方法を紹介します。
+
+JAVA Scriptで再リクエストを遮断する場合、処理中に別の画面を表示する手法で行います。
+
+処理概要としては、html上にてリクエスト処理中の画面を非表示モードで定義しておき、
+リクエスト時に表示する手順で行います。
+
+具体的には以下の様な内容になります。
+
+\vspace{1em}
+
+{\gt 再リクエストの遮断サンプル}
+
+{\footnotesize
+\begin{tabular}{|l|}
+\hline
+\verb+<html LANG="ja" DIR="LTR">+\\
+\verb+<meta http-equiv="Content-Type" CONTENT="text/html; charset=X-EUC-JP">+\\
+\verb+<script language="JavaScript">+\\
+\verb+submit_block_flag = true;+\\
+\verb+function submit_block(){+\\
+\verb+   document.getElementById('mainform').style.display = 'none';+\\
+\verb+   document.getElementById("message").style.visibility="visible";+\\
+\verb+   window.defaultStatus = "要求を送信しています。" +\\
+\verb+   return true;+\\
+\verb+}+\\
+\verb+</script>+\\
+\verb+<form action="CGIプログラム名" method="POST" onSubmit="submit_block()">+\\
+\verb+<span id=mainform>+\\
+\verb+ <input type="text" name="DATA1" maxlength="20" size="25" value="@DATA1">  ←ここに画面内容を記述します。+\\
+\verb+ <input type="text" name="DATA2" maxlength="20" size="25" value="@DATA2">+\\
+\verb+ <input type="text" name="DATA3" maxlength="20" size="25" value="@DATA3">+\\
+\verb+ <input type="text" name="DATA4" maxlength="20" size="25" value="@DATA4">+\\
+\verb+ <input type="submit">+\\
+\verb+ <input type="reset">+\\
+\verb+</span>+\\
+\verb+<span id="message" style="visibility:hidden;">+\\
+\verb+<h2>処理中です。</h2>    ←ここに処理中に表示する内容を記述します。+\\
+\verb+</span>+\\
+\verb+</form>+\\
+\verb+</html>+\\
+\hline
+\end{tabular}
+}
+
+説明しますと、mainformで本来の画面を定義しておき、messageで処理中の画面を定義しておきます。
+messageはstyle="visibility:hidden;"にて非表示にしておきます。
+
+リクエストがなされたとき(OnSubmitイベント発生時)にsubmit\_block()関数が実行され、
+mainformが非表示となり、messageが表示される。この時点で再リクエストの遮断が成立することとなります。
+
+後はCGI側のリクエストHTMLで、mainformとmessageの表示非表示関係を制御してやれば良いことになります。
+
+もちろんこの方式ですと、JAVA Scriptが実行可能なWebブラウザでなければなりません。また、spanも解釈可能でなければなりませんので、万能というわけではないかもしれませんが、筆者の環境(IE 5.0,moziila 1.0)では正常に動作しています。
+
+
